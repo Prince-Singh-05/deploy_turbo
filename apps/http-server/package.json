@@ -1,0 +1,24 @@
+{
+  "name": "http-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "npm run build && npm run start",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@repo/db": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

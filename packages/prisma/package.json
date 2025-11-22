@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "keywords": [],
   "exports": {
     "./client": "./src/index.ts"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^22.15.3",
-    "dotenv": "^17.2.3"
+    "@repo/typescript-config": "workspace:*"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^7.0.0",
-    "prisma": "^7.0.0"
+    "@prisma/client": "^6.5.0",
+    "prisma": "^6.5.0"
   }
 }
