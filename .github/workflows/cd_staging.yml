@@ -12,9 +12,10 @@ jobs:
     steps:
       - name: SSH into server
         run: |
-          echo ${{ secrets.SSH_KEY }} &> ~/ssh_key.pem
+          echo "${{ secrets.SSH_KEY }}" &> ~/ssh_key.pem
+          echo "${{ secrets.KNOWN_HOSTS }}" &> ~/.ssh/known_hosts
           ssh -i ~/ssh_key.pem azureuser@20.40.45.109
-          cd deploy_turbo/ && git pull
+          cd deploy_turbo/ && git pull origin main
           pnpm install
           pnpm run build
           pm2 restart all
