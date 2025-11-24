@@ -1,8 +1,8 @@
 name: Deploy to staging
 on:
-push:
-  branches:
-    - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
   redeploy_everything:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: SSH into server
-      - run: |
+        run: |
           echo ${{ secrets.SSH_KEY }} &> ~/ssh_key.pem
           ssh -i ~/ssh_key.pem azureuser@20.40.45.109
           cd deploy_turbo/ && git pull
