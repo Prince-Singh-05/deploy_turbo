@@ -18,4 +18,4 @@ jobs:
           touch /home/runner/.ssh/known_hosts
           echo "${{ secrets.KNOWN_HOSTS }}" &> /home/runner/.ssh/known_hosts
           chmod 700 ~/ssh_key.pem
-          ssh -i ~/ssh_key.pem azureuser@20.40.45.109 -t "cd deploy_turbo/ && git pull origin main && pnpm install && pnpm run build && pm2 restart all"
+          ssh -i ~/ssh_key.pem azureuser@20.40.45.109 -t "cd deploy_turbo/ && git pull origin main && npm i -g pnpm && pnpm install && pnpm run build && pm2 restart all"
