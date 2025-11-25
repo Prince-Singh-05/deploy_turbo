@@ -13,7 +13,10 @@ jobs:
       - name: SSH into server
         run: |
           echo "${{ secrets.SSH_KEY }}" &> ~/ssh_key.pem
-          echo "${{ secrets.KNOWN_HOSTS }}" &> ~/.ssh/known_hosts
+          mkdir -p home/runner/.ssh/
+          ls /home/runner/.ssh
+          touch /home/runner/.ssh/known_hosts
+          echo "${{ secrets.KNOWN_HOSTS }}" &> /home/runner/.ssh/known_hosts
           chmod 700 ~/ssh_key.pem
           ssh -i ~/ssh_key.pem azureuser@20.40.45.109
           cd deploy_turbo/ && git pull origin main
