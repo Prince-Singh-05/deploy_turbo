@@ -14,7 +14,7 @@ export default async function Home() {
       }}
     >
       <span>User Name: {user?.username}</span>
-      <span>Password: {user?.password}</span>
+      <span style={{ color: "green" }}>Password: {user?.password}</span>
     </div>
   );
 }
